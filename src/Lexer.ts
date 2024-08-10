@@ -1,4 +1,4 @@
-import { Token } from "./interfaces/Token";
+import type { Token } from "./interfaces/Token";
 
 /**
  * The Lexer class is responsible for converting a raw string input (DBAL syntax)
@@ -71,7 +71,7 @@ export class Lexer {
    * @returns True if the character is valid in an identifier, otherwise false.
    */
   private isIdentifierChar(char: string): boolean {
-    return this.isLetter(char) || this.isDigit(char) || char === ".";
+    return this.isLetter(char) || this.isDigit(char) || char === "." || char === "_";
   }
 
   /**
@@ -143,6 +143,7 @@ export class Lexer {
 
     const keywords = [
       "Table",
+      "Enum",
       "Note",
       "ref",
       "not",
@@ -151,9 +152,14 @@ export class Lexer {
       "default",
       "bool",
       "string",
+      "text",
+      "varchar",
       "int",
+      "integer",
       "float",
       "bool",
+      "datetime",
+      "timestamp"
     ];
 
     if (keywords.includes(identifier)) {

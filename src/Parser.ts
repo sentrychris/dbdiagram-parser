@@ -1,5 +1,5 @@
-import { AST, ColumnNode, TableNode } from "./interfaces/AST";
-import { Token, TokenType } from "./interfaces/Token";
+import type { AST, ColumnNode, TableNode } from "./interfaces/AST";
+import type { Token, TokenType } from "./interfaces/Token";
 
 /**
  * The Parser class is responsible for converting a stream of tokens, generated from a DBAL
